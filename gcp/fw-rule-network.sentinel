@@ -1,0 +1,28 @@
+import "tfplan-functions" as plan
+import "tfplan/v2" as tfplan
+import "strings"
+import "types"
+
+validated = false
+
+allFirewalls = filter tfplan.planned_values.resources as _, rc {
+    rc.type is "google_compute_firewall" and rc.mode is "managed" 
+}
+#print (allFirewalls)
+
+#print (types.type_of(allFirewalls))
+
+if (allFirewalls is not null) {
+    for allFirewalls as fw_rules, r {
+        if (r.values.network) is not "" {
+            validated = true
+        } else {
+            validated = false
+        }
+    }
+}
+
+
+main = rule {
+  validated
+}

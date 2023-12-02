@@ -1,0 +1,356 @@
+terraform_version = "1.4.1"
+
+planned_values = {
+	"outputs": {},
+	"resources": {
+		"google_compute_firewall.default": {
+			"address":        "google_compute_firewall.default",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "default",
+			"provider_name":  "registry.terraform.io/hashicorp/google",
+			"tainted":        false,
+			"type":           "google_compute_firewall",
+			"values": {
+				"allow": [
+					{
+						"ports": [
+							"80",
+							"8080",
+							"1000-2000",
+						],
+						"protocol": "tcp",
+					},
+					{
+						"ports":    [],
+						"protocol": "icmp",
+					},
+				],
+				"deny":                    [],
+				"description":             null,
+				"disabled":                null,
+				"log_config":              [],
+				"name":                    "test-firewall",
+				"network":                 "",
+				"priority":                1000,
+				"project":                 "gcplearning-393812",
+				"source_ranges":           null,
+				"source_service_accounts": null,
+				"source_tags": [
+					"web",
+				],
+				"target_service_accounts": null,
+				"target_tags":             null,
+				"timeouts":                null,
+			},
+		},
+	},
+}
+
+variables = {}
+
+resource_changes = {
+	"google_compute_firewall.default": {
+		"address": "google_compute_firewall.default",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"allow": [
+					{
+						"ports": [
+							"80",
+							"8080",
+							"1000-2000",
+						],
+						"protocol": "tcp",
+					},
+					{
+						"ports":    [],
+						"protocol": "icmp",
+					},
+				],
+				"deny":                    [],
+				"description":             null,
+				"disabled":                null,
+				"log_config":              [],
+				"name":                    "test-firewall",
+				"network":                 "",
+				"priority":                1000,
+				"project":                 "gcplearning-393812",
+				"source_ranges":           null,
+				"source_service_accounts": null,
+				"source_tags": [
+					"web",
+				],
+				"target_service_accounts": null,
+				"target_tags":             null,
+				"timeouts":                null,
+			},
+			"after_unknown": {
+				"allow": [
+					{
+						"ports": [
+							false,
+							false,
+							false,
+						],
+					},
+					{
+						"ports": [],
+					},
+				],
+				"creation_timestamp": true,
+				"deny":               [],
+				"destination_ranges": true,
+				"direction":          true,
+				"enable_logging":     true,
+				"id":                 true,
+				"log_config":         [],
+				"self_link":          true,
+				"source_tags": [
+					false,
+				],
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "default",
+		"provider_name":  "registry.terraform.io/hashicorp/google",
+		"type":           "google_compute_firewall",
+	},
+}
+
+output_changes = {}
+
+raw = {
+	"configuration": {
+		"provider_config": {
+			"google": {
+				"expressions": {
+					"project": {
+						"constant_value": "gcplearning-393812",
+					},
+					"region": {
+						"constant_value": "europe-west3",
+					},
+				},
+				"full_name":          "registry.terraform.io/hashicorp/google",
+				"name":               "google",
+				"version_constraint": "5.7.0",
+			},
+		},
+		"root_module": {
+			"resources": [
+				{
+					"address": "google_compute_firewall.default",
+					"expressions": {
+						"allow": [
+							{
+								"protocol": {
+									"constant_value": "icmp",
+								},
+							},
+							{
+								"ports": {
+									"constant_value": [
+										"80",
+										"8080",
+										"1000-2000",
+									],
+								},
+								"protocol": {
+									"constant_value": "tcp",
+								},
+							},
+						],
+						"name": {
+							"constant_value": "test-firewall",
+						},
+						"network": {
+							"constant_value": "default",
+						},
+						"source_tags": {
+							"constant_value": [
+								"web",
+							],
+						},
+					},
+					"mode":                "managed",
+					"name":                "default",
+					"provider_config_key": "google",
+					"schema_version":      1,
+					"type":                "google_compute_firewall",
+				},
+			],
+		},
+	},
+	"format_version": "1.1",
+	"planned_values": {
+		"root_module": {
+			"resources": [
+				{
+					"address":        "google_compute_firewall.default",
+					"mode":           "managed",
+					"name":           "default",
+					"provider_name":  "registry.terraform.io/hashicorp/google",
+					"schema_version": 1,
+					"sensitive_values": {
+						"allow": [
+							{
+								"ports": [
+									false,
+									false,
+									false,
+								],
+							},
+							{
+								"ports": [],
+							},
+						],
+						"deny":               [],
+						"destination_ranges": [],
+						"log_config":         [],
+						"source_tags": [
+							false,
+						],
+					},
+					"type": "google_compute_firewall",
+					"values": {
+						"allow": [
+							{
+								"ports": [
+									"80",
+									"8080",
+									"1000-2000",
+								],
+								"protocol": "tcp",
+							},
+							{
+								"ports":    [],
+								"protocol": "icmp",
+							},
+						],
+						"deny":                    [],
+						"description":             null,
+						"disabled":                null,
+						"log_config":              [],
+						"name":                    "test-firewall",
+						"network":                 "",
+						"priority":                1000,
+						"project":                 "gcplearning-393812",
+						"source_ranges":           null,
+						"source_service_accounts": null,
+						"source_tags": [
+							"web",
+						],
+						"target_service_accounts": null,
+						"target_tags":             null,
+						"timeouts":                null,
+					},
+				},
+			],
+		},
+	},
+	"resource_changes": [
+		{
+			"address": "google_compute_firewall.default",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"allow": [
+						{
+							"ports": [
+								"80",
+								"8080",
+								"1000-2000",
+							],
+							"protocol": "tcp",
+						},
+						{
+							"ports":    [],
+							"protocol": "icmp",
+						},
+					],
+					"deny":                    [],
+					"description":             null,
+					"disabled":                null,
+					"log_config":              [],
+					"name":                    "test-firewall",
+					"network":                 "",
+					"priority":                1000,
+					"project":                 "gcplearning-393812",
+					"source_ranges":           null,
+					"source_service_accounts": null,
+					"source_tags": [
+						"web",
+					],
+					"target_service_accounts": null,
+					"target_tags":             null,
+					"timeouts":                null,
+				},
+				"after_sensitive": {
+					"allow": [
+						{
+							"ports": [
+								false,
+								false,
+								false,
+							],
+						},
+						{
+							"ports": [],
+						},
+					],
+					"deny":               [],
+					"destination_ranges": [],
+					"log_config":         [],
+					"source_tags": [
+						false,
+					],
+				},
+				"after_unknown": {
+					"allow": [
+						{
+							"ports": [
+								false,
+								false,
+								false,
+							],
+						},
+						{
+							"ports": [],
+						},
+					],
+					"creation_timestamp": true,
+					"deny":               [],
+					"destination_ranges": true,
+					"direction":          true,
+					"enable_logging":     true,
+					"id":                 true,
+					"log_config":         [],
+					"self_link":          true,
+					"source_tags": [
+						false,
+					],
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "default",
+			"provider_name": "registry.terraform.io/hashicorp/google",
+			"type":          "google_compute_firewall",
+		},
+	],
+	"terraform_version": "1.4.1",
+}
