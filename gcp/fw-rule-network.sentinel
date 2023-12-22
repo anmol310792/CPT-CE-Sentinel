@@ -5,23 +5,26 @@ import "types"
 
 validated = false
 
-allFirewalls = filter tfplan.planned_values.resources as _, rc {
-    rc.type is "google_compute_firewall" and rc.mode is "managed" 
-}
 #print (allFirewalls)
 
 #print (types.type_of(allFirewalls))
 
-if (allFirewalls is not null) {
+allFirewalls = filter tfplan.resource_changes as address, rc {
+    rc.type is "google_compute_firewall" and rc.mode is "managed" and (rc.change.actions contains "create" or rc.change.actions contains "update")
+}
+
+if (length(allFirewalls) is not 0) {
     for allFirewalls as fw_rules, r {
-        if (r.values.network) is not "" {
+        if(r.change.after.network is not "") {
             validated = true
         } else {
             validated = false
+            print ("Network not defined")
         }
     }
+} else {
+    validated = true
 }
-
 
 main = rule {
   validated
